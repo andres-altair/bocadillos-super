@@ -1,0 +1,25 @@
+<h2>Formulario</h2>
+<form (ngSubmit)="aniadirReceta()">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input [(ngModel)]="receta.nombre" type="nombre" class="form-control" id="nombre" name="nombre">
+      
+    </div>
+    <div class="mb-3">
+        <label for="ingredientes" class="form-label">Ingredientes</label>
+        <input [(ngModel)]="receta.ingredientes" type="ingredientes" class="form-control" id="ingredientes" name="ingredientes">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Pasos de la Receta</label>
+        <textarea [(ngModel)]="receta.pasosReceta" class="form-control" id="pasosReceta" name="pasosReceta" rows="3"></textarea>
+    </div>
+    
+    <div class="mb-3">
+      <label for="foto" class="form-label">Foto</label>
+      <input [(ngModel)]="receta.foto" type="foto" class="form-control" id="foto" name="foto">
+    </div>
+    <button type="submit" class="btn btn-primary">subir</button>
+  </form>
+  <div *ngIf="mensaje" class="alert alert-success mt-3" role="alert">
+    {{ mensaje }}
+  </div>
